@@ -13,6 +13,15 @@ const subtractbutton = document.getElementById("subtractbutton");
 const sub1 = document.getElementById("subtract1");
 const sub2 = document.getElementById("subtract2");
 const suboutput = document.getElementById("subtractoutput")
+const multiplybutton = document.getElementById("multiplybutton");
+const mul1 = document.getElementById("multiply1");
+const mul2 = document.getElementById("multiply2");
+const muloutput = document.getElementById("multiplyoutput");
+const squarebutton = document.getElementById("squarebutton");
+const squarecows = document.getElementById("squarecows");
+const sqoutput = document.getElementById("squareoutput");
+const cowname = document.getElementById("cowname");
+
 const cow_opinion_generator = ()=>
 {
   let cowanswer = "don't know";
@@ -71,5 +80,23 @@ addbutton.addEventListener("click",() =>
 subtractbutton.addEventListener("click",() => 
 {
   suboutput.innerHTML = `
-  Messi has ${addcows(Number(sub1.value),-Number(0))} cows. Selfish boy Messi!`
-})
+  Messi has ${addcows(Number(sub1.value),-Number(0))} cows. 
+  Selfish boy Messi! He would have had 
+  ${addcows(Number(sub1.value),-Number(sub2.value))} cows.`
+}
+);
+
+multiplybutton.addEventListener("click",() =>
+{
+  muloutput.innerHTML = `
+  Messi has ${multiplycows(Number(mul1.value),Number(mul2.value))} baby cows.`
+}
+);
+
+squarebutton.addEventListener("click",() =>
+{
+  sqoutput.innerHTML = `
+  ${cowname.value} has ${calculate(squarecow,Number(squarecows.value))} cows.
+  `
+}
+);
